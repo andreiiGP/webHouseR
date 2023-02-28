@@ -251,7 +251,7 @@ header
 */
 .background-header {
   background: #d6901e !important;
-  background: linear-gradient(-145deg,#797a7a3d 0%,  #10262c 100%) !important;
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
   height: 85px!important;
   position: fixed!important;
   top: 0!important;
@@ -261,12 +261,11 @@ header
 }
 
 .header-area {
-  background: linear-gradient(-145deg,#797a7a3d 0%,  #10262c 100%) !important;
-  background-size: contain;
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  height: 110px;
+  height: 80px;
   top: 0;
   left: 0;
   right: 0;
@@ -276,6 +275,7 @@ header
   -o-transition: all .5s ease 0s;
   transition: all .5s ease 0s;
   border-bottom: 1px solid rgb(0, 0, 0);
+  
    
 }
 
@@ -286,7 +286,7 @@ header
 }
 
 .header-area .main-nav .logo {
-  line-height: 100px;
+  line-height: 70px;
   color: rgb(0, 0, 0);
   font-size: 28px;
   font-weight: 700;
@@ -307,10 +307,10 @@ header
   margin-top: 20px !important;
 }
 
-.header-area .main-nav .nav {
+ .header-area .main-nav .nav {  /*margin de el menu */
   float:right;
-  margin-top: 35px;
-  margin-right: 0px;
+  margin-top: 24px;
+  margin-right: -75px;
   background-color: transparent;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -343,14 +343,14 @@ header
   line-height: 40px;
   border: transparent;
   letter-spacing: 1px;
-  font-family: 'Bree Serif', serif;
+  font-family: 'Roboto', sans-serif;
  
 
 }
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: #97d0f1!important;
+  color: #0c283a!important;
   opacity: 1.90;
 }
 
@@ -415,8 +415,8 @@ header
 }
 
 .header-area .main-nav .nav li.has-sub ul li a:hover {
-  background: #fff;
-  color: #97d0f1!important;
+  background: #09203f;
+  color: #fff!important;
   padding-left: 20px;
 }
 
@@ -548,7 +548,7 @@ header
 }
 
 .header-area.header-sticky {
-  min-height: 80px;
+  min-height: 10px;
 }
 
 .header-area .nav {
@@ -633,8 +633,8 @@ header
     color: #191a20 !important;
   }
   .header-area .main-nav .nav li a:hover {
-    background: #eee !important;
-    color: #d87519!important;
+    background: #09203f !important;
+    color: #97d0f1!important;
   }
   .header-area .main-nav .nav li.has-sub ul.sub-menu {
     position: relative;
@@ -1396,19 +1396,6 @@ section.contact-us #contact button:hover
     
 }
 
-.cuadrar{
-    
-    padding-top: -12px;
-    height: 50px
-}
-
-.juan #pedro{
-    
-    height: 500px;
-    width: 100%;
- 
-}
-
 /*
 ---------------------------------------------
 heading page
@@ -1916,7 +1903,7 @@ body {
   }
   .header-area {
    
-    background: linear-gradient(-145deg, #d6901e 0%, #11c2e8 100%) !important;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%) !important;
   }
   .services .owl-nav .owl-next{
     right: -70px;
