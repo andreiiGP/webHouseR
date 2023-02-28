@@ -1,0 +1,46 @@
+
+#fondo{
+    background-image: url(https://images.pexels.com/photos/2124696/pexels-photo-2124696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: 100% 100%;
+    height:649px;
+}
+
+.negro{
+   background-color: rgba(0, 0, 0, 0.473);
+   height: 649px;
+}
+
+#bgn{
+    
+    background-color: rgba(255, 250, 250, 0.26);
+}
+#cont {
+      width: 89%;
+     
+}
+
+.colore{
+
+    color: rgb(255, 255, 255);
+}
+em{
+    font-family: 'Anton', sans-serif;
+    color:rgb(174, 232, 255);
+}
+
+.contenedor-video{
+
+  width: 45%;
+  background:rgba(255, 0, 0, 0.726);
+  padding: 1px 15px;
+  margin-right: auto;
+  margin-top: 1%;
+}
+
+
+
+.cuadrar{
+
+    padding-top: 8%;
+    height: 400px;
+}
