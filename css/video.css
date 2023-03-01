@@ -45,11 +45,11 @@ h1{
 
 }
 
-@media screen and (max-width : 500px) {
+@media screen and (min-width : 413px) and (max-width : 990px) {
 
     .titulo{
 
-        margin-top: 35%;
+        margin-top: 25%;
         text-align: center;
         font-family: 'Times New Roman', Times, serif;
     }
@@ -57,11 +57,11 @@ h1{
 
 }
 
-@media screen and (max-width : 700px) {
+@media screen and (max-width : 500px) {
 
     .titulo{
 
-        margin-top: 35%;
+        margin-top: 55%;
         text-align: center;
         font-family: 'Times New Roman', Times, serif;
     }
