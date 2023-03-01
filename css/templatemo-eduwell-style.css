@@ -310,7 +310,7 @@ header
  .header-area .main-nav .nav {  /*margin de el menu */
   float:right;
   margin-top: 24px;
-  margin-right: -75px;
+  margin-right: 1px;
   background-color: transparent;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -321,7 +321,7 @@ header
 }
 
 .header-area .main-nav .nav li {
-  padding-left: 30px;
+  padding-left: 15px;
  
 }
 

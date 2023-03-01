@@ -1,0 +1,70 @@
+
+.fondo{
+
+    width: 100%;
+    height:500px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    background-color: wheat;
+}
+
+.sobrefondo{
+   width: 100%;
+   height: 500px;
+   background-image: linear-gradient(to top, #000000 0%, #ffffff96 100%, #000000fb 100%, #0f0f0fc9 100%);
+   position: absolute;
+}
+
+.titulo{
+
+    margin-top: 18%;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+h1{
+    font-size: 50px;
+  
+  }
+  
+  h2{
+      font-size: 25px;
+  
+  }
+
+  
+@media screen and (min-width : 1000) {
+
+    .titulo{
+
+        margin-top: 55%;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+
+}
+
+@media screen and (max-width : 500px) {
+
+    .titulo{
+
+        margin-top: 35%;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+
+}
+
+@media screen and (max-width : 700px) {
+
+    .titulo{
+
+        margin-top: 35%;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+
+}
