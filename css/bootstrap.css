@@ -4252,7 +4252,7 @@ textarea.form-control-lg {
 
 .card {
   position: relative;
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
@@ -4291,6 +4291,8 @@ textarea.form-control-lg {
 
 .card-title {
   margin-bottom: 0.5rem;
+  vertical-align: inherit;
+  font-weight: 900;
 }
 
 .card-subtitle {
@@ -4358,7 +4360,7 @@ textarea.form-control-lg {
 
 .card-img,
 .card-img-top {
-  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-left-radius: calc(0.2rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
 }
 
