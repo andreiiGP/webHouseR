@@ -101,7 +101,7 @@ p {
 }
 
 img {
-  width: 100%;
+  width: 70%;
 
   overflow: hidden;
   
@@ -674,8 +674,8 @@ header
 @media (max-width: 767px) {
   .header-area .main-nav .logo {
    
-    margin-left:-20px;
-    width: 300px;
+    margin-left:-50 px;
+    width: 250px;
     margin-top: 1.2%;
     
   }
