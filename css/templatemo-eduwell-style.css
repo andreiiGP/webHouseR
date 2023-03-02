@@ -674,7 +674,7 @@ header
 @media (max-width: 767px) {
   .header-area .main-nav .logo {
    
-    margin-left:-50 px;
+    margin-left:-10px;
     width: 250px;
     margin-top: 1.2%;
     

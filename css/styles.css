@@ -3,49 +3,101 @@ body{
 background-image: url(../imagenes/fondo1.jpg);
 background-repeat: no-repeat;
 background-size: 100% 100%;
-background-attachment: fixed;
+height:695px;
 }
+
+.negro{
+    background-color: rgba(0, 0, 0, 0.473);
+    height: 100%;
+ }
 
 .texto h2{
 
     text-align: center;
-    position: absolute;
     font-size: 4em;
     font-family: 'Anton', sans-serif;
     color: rgb(255, 255, 255);
     width: 100%;
     height: 100%;
-    padding-top: 16%;
+    padding-top: 3%;
 }
 
-.texto h6{
+ .texto h6{
 
     text-align: center;
-    position: absolute;
     font-size:  1em;
     color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.226);
     width: 100%;
-    height: 100%;
+    height: auto;
     padding-top: 11%;
-}
+ 
+} 
 
 .boton-log{
     
-    position: absolute;
+    position: relative;
     width: 30%;
-    top: 65%;
+    top: 26%;
     left: 35%;
+    margin-top: 30px;
 
 }
 .boton-regis{
-    position: absolute;
+    position: relative;
     width: 30%;
-    top: 73%;
+    top: 70%;
     left: 35%;
+    margin-top: 30px;
 }
 
 em{
     font-family: 'Anton', sans-serif;
-    color:rgb(174, 232, 255);
+    color:#8fd3f4;
+}
+
+@media (min-width: 200px) and (max-width: 600px) { 
+
+    body{
+
+        height:700px;
+        }
+    
+        .texto h2{
+
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Anton', sans-serif;
+            color: rgb(255, 255, 255);
+            width: 100%;
+            height: 100%;
+            padding-top: 11%;
+        }
+        .texto h6{
+
+            text-align: center;
+            font-size:  14px;
+            color: rgb(255, 255, 255);
+            width: 100%;
+            height: auto;
+            padding-top: 49%;
+         
+        } 
+        .boton-log{
+    
+            position: relative;
+            width: 60%;
+            top: 26%;
+            left: 20%;
+            margin-top: 100px;
+        
+        }       
+        .boton-regis{
+            position: relative;
+            width: 60%;
+            top: 70%;
+            left: 20%;
+            margin-top: 30px;
+        }
+         
+
 }
