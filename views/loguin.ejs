@@ -27,7 +27,7 @@
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
-                  <form class="row g-0">
+                  <form class="row g-0" method="post" action="/ingre">
 
                     <div class="d-flex align-items-center mb-3 pb-1">
                       <span class="h1 fw-bold mb-0">Web-<em>House</em></span>
@@ -36,10 +36,10 @@
                     <h5 class="fw-normal mb-3 pb-3 colore" style="letter-spacing: 1px;">Inicia sesión en tu cuenta </h5>
                     
                     <div class="mb-3">
-                        <input type="text" class="form-control form-control"  placeholder=" Nombre De Usuario"   required="">
+                        <input type="text" id="user" name="user" class="form-control form-control"  placeholder=" Nombre De Usuario"   required="">
                       </div>
                     <div class="mb-3">
-                      <input type="password" id="myInput" class="form-control form-control"  placeholder="Contraseña" maxlength="10" minlength="5" required="">
+                      <input type="password" id="pass" name="pass" class="form-control form-control"  placeholder="Contraseña" maxlength="10" minlength="5" required="">
                     </div>
 
                     <div class="form-check mb-3">
@@ -55,7 +55,7 @@
 
                   <script>
                     function myFunction() {
-                      const x = document.getElementById("myInput");
+                      const x = document.getElementById("pass");
                       if (x.type === "password") {
                         x.type = "text";
                       } else {
@@ -72,7 +72,6 @@
         </div>
       </div>
     </div>
-
     </div>
     </section>
     <script src="js/jquery-3.3.1.min.js"></script>
