@@ -27,7 +27,7 @@
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
-                  <form class=" row g-3">
+                  <form class=" row g-3" method="post" action="/save">
 
                     <div class="d-flex align-items-center mb-3 pb-1">
                       <span class="h1 fw-bold mb-0">Web-<em>House</em></span>
@@ -35,30 +35,30 @@
 
                     <h5 class="fw-normal colore" style="letter-spacing: 1px;">Registra tu cuenta </h5>
                     <div class="col-12 ">
-                      <input type="text" class="form-control" name="cedula" placeholder="Cedula"  required="">
+                      <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Cedula"  required="">
                     </div>
                     <div class="col-6 ">
-                        <input type="text" class="form-control" name="Nombre" placeholder="Nombre" required="">
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required="">
                     </div>
                     <div class="col-6 ">
-                      <input type="text" class="form-control" name="Apellido" placeholder="Apellido"  required="">
+                      <input type="text" class="form-control"  id="apellido" name="apellido" placeholder="Apellido"  required="">
                     </div>
                     <div class="col-6 ">
-                      <input type="email" class="form-control" name="email" placeholder="Correo"  required="">
+                      <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo"  required="">
                     </div>
                     <div class="col-6 ">
-                      <input type="text" class="form-control" name="telefono" placeholder="Telefono"  required="">
+                      <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono"  required="">
                     </div>
                      <div class="col-6 ">
-                      <input type="text" class="form-control" name="nobuser" placeholder="Nombre Usuario"  required="">
+                      <input type="text" class="form-control" id="nombuser" name="nombuser" placeholder="Nombre Usuario"  required="">
                     </div>
                     <div class="col-6 ">
-                      <input type="password" class="form-control" name="pass" placeholder="Contrasena"  required="">
+                      <input type="password" class="form-control" id="pass" name="pass" placeholder="Contrasena"  required="">
                     </div>
                  
                       <div class="col-12">
-                          <select class="form-select" name="rol">
-                              <option value="1">Usuario</option>
+                          <select class="form-select" id="rol" name="rol">
+                              <option value="usu">Usuario</option>
                               </select>
                        </div>
                        <div class="pt-1" >
