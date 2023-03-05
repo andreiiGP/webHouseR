@@ -18,7 +18,7 @@ exports.registro= async(req,res)=>{
     const Pass = req.body.pass;
     const Rol = req.body.rol;
     let passswordHas= await bcryptjs.hash(Pass,8)
-    conexion.query('INSERT INTO usuarios SET ? ',{Cedula:Cedula,Nombre:Nombre,Apellido:Apellido,Correo:Correo,Telefono:Telefono,User:User,Pass:passswordHas,Rol:Rol},(error,result)=>{
+    conexion.query('INSERT INTO users SET ? ',{Cedula:Cedula,Nombre:Nombre,Apellido:Apellido,Correo:Correo,Telefono:Telefono,User:User,password:passswordHas,Rol:Rol},(error,result)=>{
 
         if(error){
             console.log(error)
@@ -46,13 +46,13 @@ exports.ingre= async(req,res)=>{
     const pass = req.body.pass;
     let passswordHas= await bcryptjs.hash(pass,8)
     if (user && pass) {
-		conexion.query('SELECT * FROM usuarios WHERE user = ?', [user], async (error, results)=> {
-			if( results.length == 0 || await bcryptjs.compare(pass,results["0"].Pass)) {   
+		conexion.query('SELECT * FROM users WHERE user = ?', [user], async (error, results)=> {
+			if( results.length == 0 ||  await bcryptjs.compare(pass,results[0].password)) {   
 
                 res.render('loguin',{
                         alert:true,
                         alertTitle:'Error',
-                        alertMessage:'Usuario O Contraseña Incorrectos ',
+                        alertMessage:'Usuario o Contraseña Incorrectos ',
                         alertIcon:'error',
                         showConfirmButton:true,
                         timer:false,
