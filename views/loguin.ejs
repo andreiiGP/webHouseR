@@ -36,10 +36,10 @@
                     <h5 class="fw-normal mb-3 pb-3 colore" style="letter-spacing: 1px;">Inicia sesión en tu cuenta </h5>
                     
                     <div class="mb-3">
-                        <input type="text" id="user" name="user" class="form-control form-control"  placeholder=" Nombre De Usuario"   required="">
+                        <input type="text" id="user" name="user" class="form-control form-control"  placeholder=" Nombre De Usuario" >
                       </div>
                     <div class="mb-3">
-                      <input type="password" id="pass" name="pass" class="form-control form-control"  placeholder="Contraseña" maxlength="10" minlength="5" required="">
+                      <input type="password" id="pass" name="pass" class="form-control form-control"  placeholder="Contraseña" maxlength="10" minlength="" >
                     </div>
 
                     <div class="form-check mb-3">
@@ -78,5 +78,21 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if (typeof alert != "undefined") { %>
+      <script>
+        Swal.fire({
+        title: '<%=alertTitle%>',
+        text: '<%=alertMessage%>',
+        icon: '<%=alertIcon%>',
+        showConfirmButton:<%=showConfirmButton%>,
+        timer:<%=timer%>
+      }).then(()=>{
+        window.location = '/<%= ruta %>'
+      })
+      </script>
+   <% } %>
+
   </body>
 </html>

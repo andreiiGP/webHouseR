@@ -1,7 +1,8 @@
 const conexion = require('../database/db');
 require('../database/db'); // requerimos la base de datos 
 // creacion de una costante para encriptar las cotraseñas 
-const  bcryptjs =require('bcryptjs')
+const  bcryptjs =require('bcryptjs');
+const session = require('express-session');
 
 
 
@@ -31,7 +32,7 @@ exports.registro= async(req,res)=>{
                 alertMessage:'Registro Exitoso!!!',
                 alertIcon:'success',
                 showConfirmButton:false,
-                timer:4000,
+                timer:2000,
                 ruta:'loguin'
             })
         }
@@ -39,25 +40,55 @@ exports.registro= async(req,res)=>{
     }
     // console.log(Cedula+"-"+Nombre+"-"+Apellido+"-"+Email+"-"+Telefono+"-"+Nombuser+"-"+Pass+"-"+Rol); 
    
-exports.ingre= async(req,res)=>{}
-/* 
-    const User = req.body.user;
-    const Pass = req.body.pass;
+exports.ingre= async(req,res)=>{
 
-    if (!User || !Pass) {
-        res.redirect('/inicio')
-    }
-    else
-    {
-        conexion.query('SELECT * FROM usuarios =?',[User],(error,result)=>{
+    const user = req.body.user;
+    const pass = req.body.pass;
+    let passswordHas= await bcryptjs.hash(pass,8)
+    if (user && pass) {
+		conexion.query('SELECT * FROM usuarios WHERE user = ?', [user], async (error, results)=> {
+			if( results.length == 0 || await bcryptjs.compare(pass,results["0"].Pass)) {   
 
-            if(result.length== 0 || ! (bcryptjs.compare(Pass,result[0].Pass))){
+                res.render('loguin',{
+                        alert:true,
+                        alertTitle:'Error',
+                        alertMessage:'Usuario O Contraseña Incorrectos ',
+                        alertIcon:'error',
+                        showConfirmButton:true,
+                        timer:false,
+                        ruta:'loguin'
+                    })
 
-                res.reder('/index')
-            }
-        })
+                    
+              }else
+              {
+                req.session.name= results[0].name
+                res.render('loguin',{
+                    alert:true,
+                    alertTitle:'Conexion Exitosa!!',
+                    alertMessage:'LOGUIN CORRECTO  ',
+                    alertIcon:'success',
+                    showConfirmButton:false,
+                    timer:1500,
+                    ruta:'inicio'
+                    })
+                
+             }
+            
+    })
+}else
+{
 
-        }   
-    }
+  res.render('loguin',{
+      alert:true,
+      alertTitle:'Advertencia',
+      alertMessage:'INGRESE USUARIO O CONTRASEÑA  ',
+      alertIcon:'warning',
+      showConfirmButton:true,
+      timer:1500,
+      ruta:'loguin'
+      })
+  
+}
 
- */
+}

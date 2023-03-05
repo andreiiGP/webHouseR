@@ -31,8 +31,7 @@ app.use('/',require('./router'))
 app.use(express.static('public')); 
 
 // ponemos el puerto deonde va a escuchar nuestra paina web 
-app.listen(3000,()=>{
+app.listen(5000,()=>{
     // cuando aranque dejamos mensaje en consola que se ejecuta en el puerto 
-    console.log('Server corriendo en http://localhots:3000');
+    console.log('Server corriendo en http://localhost:5000');
 });
-
