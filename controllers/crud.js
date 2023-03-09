@@ -47,8 +47,9 @@ exports.ingre= async(req,res)=>{
     let passswordHas= await bcryptjs.hash(pass,8)
     if (user && pass) {
 		conexion.query('SELECT * FROM users WHERE user = ?', [user], async (error, results)=> {
-			if( results.length == 0 ||  await bcryptjs.compare(pass,results[0].password)) {   
-
+           
+			if( results.length == 0 && await bcryptjs.compare(pass,results[6].password)) {   
+                console.log(results[0])
                 res.render('loguin',{
                         alert:true,
                         alertTitle:'Error',
