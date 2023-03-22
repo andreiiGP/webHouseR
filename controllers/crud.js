@@ -39,31 +39,17 @@ exports.registro= async(req,res)=>{
     })
     }
     // console.log(Cedula+"-"+Nombre+"-"+Apellido+"-"+Email+"-"+Telefono+"-"+Nombuser+"-"+Pass+"-"+Rol); 
-   
-exports.ingre= async(req,res)=>{
-
-    const user = req.body.user;
-    const pass = req.body.pass;
-    let passswordHas= await bcryptjs.hash(pass,8)
-    if (user && pass) {
-		conexion.query('SELECT * FROM users WHERE user = ?', [user], async (error, results)=> {
-           
-			if( results.length == 0 && await bcryptjs.compare(pass,results[6].password)) {   
-                console.log(results[0])
-                res.render('loguin',{
-                        alert:true,
-                        alertTitle:'Error',
-                        alertMessage:'Usuario o Contraseña Incorrectos ',
-                        alertIcon:'error',
-                        showConfirmButton:true,
-                        timer:false,
-                        ruta:'loguin'
-                    })
-
-                    
-              }else
-              {
-                req.session.name= results[0].name
+    exports.ingre = async (req, res) => {
+        const user = req.body.user;
+        const pass = req.body.pass;
+      
+        if (user && pass) {
+          conexion.query('SELECT * FROM users WHERE user = ?', [user], async (error, results) => {
+            if (results.length > 0) {
+              // Si hay resultados, verificar la contraseña
+              const veri = await bcryptjs.compare(pass, results[0].password);
+              if (veri==true) {
+                // Contraseña válida
                 res.render('loguin',{
                     alert:true,
                     alertTitle:'Conexion Exitosa!!',
@@ -73,23 +59,42 @@ exports.ingre= async(req,res)=>{
                     timer:1500,
                     ruta:'inicio'
                     })
-                
-             }
-            
-    })
-}else
-{
-
-  res.render('loguin',{
-      alert:true,
-      alertTitle:'Advertencia',
-      alertMessage:'INGRESE USUARIO O CONTRASEÑA  ',
-      alertIcon:'warning',
-      showConfirmButton:true,
-      timer:1500,
-      ruta:'loguin'
-      })
-  
-}
-
-}
+              } else {
+                // Contraseña incorrecta
+                res.render('loguin',{
+                    alert:true,
+                    alertTitle:'Error',
+                    alertMessage:'Contraseña Incorrecta ',
+                    alertIcon:'error',
+                    showConfirmButton:true,
+                    timer:false,
+                    ruta:'loguin'
+                })
+              }
+            } else {
+              // Usuario no encontrado
+              res.render('loguin',{
+                alert:true,
+                alertTitle:'Error',
+                alertMessage:'Usuario no encontrado ',
+                alertIcon:'error',
+                showConfirmButton:true,
+                timer:false,
+                ruta:'loguin'
+            })
+            }
+          });
+        } else {
+          // Datos incompletos
+          res.render('loguin',{
+            alert:true,
+            alertTitle:'Advertencia',
+            alertMessage:'INGRESE USUARIO O CONTRASEÑA  ',
+            alertIcon:'warning',
+            showConfirmButton:true,
+            timer:1500,
+            ruta:'loguin'
+            })
+        }
+      };
+      

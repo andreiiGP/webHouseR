@@ -197,3 +197,55 @@ h5{
     margin-top: 5%;
   
  }
+ .color-section{
+
+    background-color: #09203f;
+ }
+
+
+.bar-icon{
+
+    background-color: aqua;
+}
+
+.contador_p{
+    margin-top: 5%;
+    width: 95%;
+    margin-left: 4%;
+    margin-right: 4%;
+  
+
+}
+
+.contador{
+
+    width: 24%;
+    text-align: center;
+    display: inline-block;
+   
+}
+
+.cont_cant{
+
+    font-size: 30px;
+    margin: 10px  0;
+    font-weight: 900;
+}
+
+@keyframes aparecer{
+    0%{
+        opacity:0;
+        transform:translateY(100px);    
+    }
+    100%{
+        opacity: 1;
+        transform:translateY(0);  
+    }
+}
+.ocultar{
+    opacity: 0;
+}
+
+.animar{
+    animation: aparecer 1.3s;
+}
