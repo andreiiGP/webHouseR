@@ -192,16 +192,11 @@ h5{
 
  .info{
 
-    margin-left: 4%;
-    margin-right: 4%;
-    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 8%;
   
  }
- .color-section{
-
-    background-color: #09203f;
- }
-
 
 .bar-icon{
 
@@ -209,7 +204,7 @@ h5{
 }
 
 .contador_p{
-    margin-top: 5%;
+    margin-top: 8%;
     width: 95%;
     margin-left: 4%;
     margin-right: 4%;
@@ -249,3 +244,24 @@ h5{
 .animar{
     animation: aparecer 1.3s;
 }
+
+.color-section{
+
+    background-color: #b6cae4;
+    margin-top: -5%;
+ }
+
+ .svg2{
+    margin-top: 1%;
+    position: static;
+
+}
+
+
+ .infoMA{
+
+
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 50px;
+ }
