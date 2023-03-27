@@ -1,71 +1,76 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link rel="icon" href="imagenes/edificios.ico">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="icon" href="imagenes/edificios.ico">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
 
 
-    <title>Login</title>
-  </head>
-  <body>
-    <section class="vh-100" id="fondo">
-      <div class="negro">
-      <div class="container py-8 h-100" >
-        <div class="row d-flex justify-content-center align-items-center h-100" >
+  <title>Login</title>
+</head>
+
+<body>
+  <section class="vh-100" id="fondo">
+    <div class="negro">
+      <div class="container py-8 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col col-xl-10" id="cont">
             <div class="card" style="border-radius: 1rem;" id="bgn">
               <div class="row g-0">
                 <div class="col-md-6 col-lg-5 d-none d-md-block">
-                <img src="imagenes/pexels-cottonbro-studio-7437498.jpg"
-                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-              </div>
-              <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                <div class="card-body p-4 p-lg-5 text-black">
-                  <form class="row g-0" method="post" action="/ingre">
-
-                    <div class="d-flex align-items-center mb-3 pb-1">
-                      <span class="h1 fw-bold mb-0">Web-<em>House</em></span>
-                    </div>
-
-                    <h5 class="fw-normal mb-3 pb-3 colore" style="letter-spacing: 1px;">Inicia sesión en tu cuenta </h5>
-                    
-                    <div class="mb-3">
-                        <input type="text" id="user" name="user" class="form-control form-control"  placeholder=" Nombre De Usuario" >
-                      </div>
-                    <div class="mb-3">
-                      <input type="password" id="pass" name="pass" class="form-control form-control"  placeholder="Contraseña" maxlength="" minlength="" >
-                    </div>
-
-                    <div class="form-check mb-3">
-                      <input id="mostar" class="form-check-input"  type="checkbox"  onclick="myFunction()">
-                        <label class="form-check-label colore" for="mostar">Verifica tu Contraseña </label>
-                    </div>
-
-                    <div class="pt-1 mb-4 d-flex" >
-                       <button class="btn btn-primary" type="submit">Login</button>
-                    </div>
-                       <a class="colore"href="#!">¿Olvidaste tu Contraseña?</a>
-                  </form>
-
-                  <script>
-                    function myFunction() {
-                      const x = document.getElementById("pass");
-                      if (x.type === "password") {
-                        x.type = "text";
-                      } else {
-                        x.type = "password";
-                      }
-                    }
-                 </script>
-
+                  <img src="imagenes/pexels-cottonbro-studio-7437498.jpg" alt="login form" class="img-fluid"
+                    style="border-radius: 1rem 0 0 1rem;" />
                 </div>
-              </div>
+                <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                  <div class="card-body p-4 p-lg-5 text-black">
+                    <form class="row g-0" method="post" action="/ingre">
+
+                      <div class="d-flex align-items-center mb-3 pb-1">
+                        <span class="h1 fw-bold mb-0">Web-<em>House</em></span>
+                      </div>
+
+                      <h5 class="fw-normal mb-3 pb-3 colore" style="letter-spacing: 1px;">Inicia sesión en tu cuenta
+                      </h5>
+
+                      <div class="mb-3">
+                        <input type="text" id="user" name="user" class="form-control form-control"
+                          placeholder=" Nombre De Usuario">
+                      </div>
+                      <div class="mb-3">
+                        <input type="password" id="pass" name="pass" class="form-control form-control"
+                          placeholder="Contraseña" maxlength="" minlength="">
+                      </div>
+
+                      <div class="form-check mb-3">
+                        <input id="mostar" class="form-check-input" type="checkbox" onclick="myFunction()">
+                        <label class="form-check-label colore" for="mostar">Verifica tu Contraseña </label>
+                      </div>
+
+                      <div class="pt-1 mb-4 d-flex">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                      </div>
+                      <a class="colore" href="#!">¿Olvidaste tu Contraseña?</a>
+                    </form>
+
+                    <script>
+                      function myFunction() {
+                        const x = document.getElementById("pass");
+                        if (x.type === "password") {
+                          x.type = "text";
+                        } else {
+                          x.type = "password";
+                        }
+                      }
+                    </script>
+
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -73,26 +78,27 @@
       </div>
     </div>
     </div>
-    </section>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+  </section>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <% if (typeof alert != "undefined") { %>
-      <script>
-        Swal.fire({
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <% if (typeof alert !="undefined" ) { %>
+    <script>
+      Swal.fire({
         title: '<%=alertTitle%>',
         text: '<%=alertMessage%>',
         icon: '<%=alertIcon%>',
         showConfirmButton:<%=showConfirmButton%>,
-        timer:<%=timer%>
-      }).then(()=>{
-        window.location = '/<%= ruta %>'
-      })
-      </script>
-   <% } %>
+        timer:<%=timer %>
+      }).then(() => {
+          window.location = '/<%= ruta %>'
+        })
+    </script>
+    <% } %>
 
-  </body>
+</body>
+
 </html>

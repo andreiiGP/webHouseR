@@ -1,4 +1,5 @@
 
+
 .fondo{
 
     width: 100%;
@@ -192,8 +193,8 @@ h5{
 
  .info{
 
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 8%;
+    margin-right: 8%;
     margin-top: 8%;
   
  }
@@ -208,7 +209,7 @@ h5{
     width: 95%;
     margin-left: 4%;
     margin-right: 4%;
-  
+    
 
 }
 
@@ -245,23 +246,28 @@ h5{
     animation: aparecer 1.3s;
 }
 
-.color-section{
+.section-manual{
 
 
     margin-top: 5%;
  }
 
  .svg2{
-    margin-top: 1%;
+    margin-top: -5%;
     position: static;
 
 }
 
 
  .infoMA{
-
-  
-    margin-left: 22%;
+    margin-left: 25%;
     /* margin-right: 15%; */
     margin-bottom: 50px;
+ }
+
+ .bac{
+
+    background-color: #b6cae4;
+    height: 50px;
+    /* margin-top: -5%; */
  }
