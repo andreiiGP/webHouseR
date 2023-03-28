@@ -260,7 +260,7 @@ h5{
 
 
  .infoMA{
-    margin-left: 25%;
+    margin-left: 20%;
     /* margin-right: 15%; */
     margin-bottom: 50px;
  }
@@ -270,4 +270,30 @@ h5{
     background-color: #b6cae4;
     height: 50px;
     /* margin-top: -5%; */
+ }
+
+ /*estilos de clasificados */
+
+.clasificados{
+    background-color: #13547a;
+    display: flexbox;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: white;
+    height: 400px;
+    
+}
+
+ #h2{
+   
+    font-size: clamp(3em,60vw,4em);
+    font-weight: 900;
+    border-bottom: solid white ;
+    margin-right: 50%;
+    
+ }
+ h5{
+
+
+    color: white;
  }
