@@ -188,6 +188,7 @@ h5{
        margin-left: 4%;
        margin-right: 4%;
     }
+
  } 
 
 
@@ -247,9 +248,8 @@ h5{
 }
 
 .section-manual{
-
-
     margin-top: 5%;
+
  }
 
  .svg2{
@@ -258,12 +258,26 @@ h5{
 
 }
 
-
  .infoMA{
-    margin-left: 20%;
-    /* margin-right: 15%; */
+    margin-left:20%;
+    margin-right:20%; 
     margin-bottom: 50px;
+
  }
+
+ @media screen and (min-width : 200px) and (max-width : 767px) {
+
+    
+ .infoMA{
+    margin-left:8%;
+    margin-right:8%; 
+    margin-bottom: 50px;
+    height: 15%;
+
+}
+ }
+
+   
 
  .bac{
 
@@ -276,30 +290,66 @@ h5{
 
 .clasificados{
     background-color: #13547a;
-    display: flexbox;
-    padding-left: 10%;
-    padding-right: 10%;
-    color: white;
-    height: 400px;
-    
+    margin-top: -5%;
+    height: 500px;
 }
 
- #h2{
+.cuadrar-clasi{
+
+    margin-left: 10%;
+    margin-right: 10%;
+    display:block;
+    color: white;
+ 
+}
+
+
+#h2{
    
     font-size: clamp(3em,60vw,4em);
-    font-weight: 900;
-    border-bottom: solid white ;
+    font-weight: 800;
     margin-right: 50%;
-    
+    border-bottom: solid white;
  }
- h5{
+#h5{
 
-
-    color: white;
+    color: rgb(255, 255, 255);
+    text-align: justify;
  }
 
- .img{
+#dimencionesimagen{
 
-    width: 10%;
-    height: 10%;
+    width: 25%;
+    height: 25%;
+    margin-left: 65%;
+    margin-top: -18%;
+    border-bottom: solid white;
+
+}
+
+@media screen and (min-width : 200px) and (max-width : 400px) {
+
+#h2{
+   
+    font-size: clamp(2em,20vw,2em);
+    font-weight: 800;
+    margin-right: 50%;
+    border-bottom: solid white;
  }
+#h5{
+
+    color: rgb(255, 255, 255);
+    text-align: justify;
+ }
+
+#dimencionesimagen{
+
+    width: 30%;
+    height: 30%;
+    margin-left: 65%;
+    margin-top: -5%;
+    border-bottom: solid white;
+    overflow: hidden;
+}
+    }
+   
