@@ -350,6 +350,50 @@ h5{
     margin-top: -5%;
     border-bottom: solid white;
     overflow: hidden;
+    
 }
     }
-   
+
+.cuadrar-tabla{
+
+background-color:  white;
+margin-top: -4%;
+width: 650px;    
+
+
+}
+table.scroll {
+  
+    border-spacing: 0;
+
+}
+
+table.scroll tbody,
+table.scroll thead tr { display: block; }
+
+table.scroll tbody {
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: scroll;
+}
+
+table.scroll tbody td,
+table.scroll thead th {
+    width: 158px;
+
+}
+
+table.scroll thead th:last-child {
+    width: 156px; /* 140px + 16px scrollbar width */
+}
+
+thead tr th { 
+    height: 30px;
+    line-height: 30px;
+    
+}
+
+
+tbody td:last-child, thead th:last-child {
+    border-right: none !important;
+}

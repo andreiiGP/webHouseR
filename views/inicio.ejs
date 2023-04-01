@@ -203,7 +203,33 @@
     <div class="cuadrar-clasi">
       <h2 id="h2">CLASIFICADOS</h2>
       <h5 id="h5"><b>¿Vendes algo?</b> Aprovecha este espacio para publicar <br> tu  producto  o emprendimiento. </h5>
-    <img id="dimencionesimagen" src="imagenes/vendido.png" alt="">
+      <img id="dimencionesimagen" src="imagenes/vendido.png" alt="">
+      <div class="cuadrar-tabla containerr">
+      <table class="table table-hover text-center table-bordered scroll ">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Informacion</th>
+            <th scope="col">Contacto</th>
+            <th scope="col">Aciones</th>
+          </tr>
+        </thead>
+         <tbody>
+          <% results.forEach((clasificados) => { %>
+            <tr>
+              <td><%= clasificados.Nombre %></td>
+              <td><%= clasificados.Informacion %></td>
+              <td><%= clasificados.Contacto %></td>
+              <td> 
+                <a href="/Delete" class="btn btn-outline-danger">Delete</a>
+                
+              </td>
+            </tr>
+          <% }); %>
+        </tbody> 
+      </table>
+    </div>
+    
     </div> 
     </div>
   </section>

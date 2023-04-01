@@ -3,6 +3,7 @@ require('../database/db'); // requerimos la base de datos
 // creacion de una costante para encriptar las cotraseñas 
 const bcryptjs = require('bcryptjs');
 const session = require('express-session');
+const { request, response } = require('express');
 
 
 
@@ -97,3 +98,5 @@ exports.ingre = async (req, res) => {
     })
   }
 };
+
+/* codigo de la consulta de la tabal clasificados  */

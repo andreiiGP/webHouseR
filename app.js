@@ -30,6 +30,7 @@ app.use('/', require('./router'))
 // nos permite usar los estilos (CSS) en nustro servidor 
 app.use(express.static('public'));
 
+
 // ponemos el puerto deonde va a escuchar nuestra paina web 
 app.listen(5000, () => {
     // cuando aranque dejamos mensaje en consola que se ejecuta en el puerto 

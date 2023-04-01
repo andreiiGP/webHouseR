@@ -22,10 +22,19 @@ router.get('/registro', async (req, res) => {
 
     res.render('registro')
 })
-// se llama a la ventana inicio de ususarios 
+// se llama a la ventana inicio de ususarios y se pone la tabal desde mysql para mostar los clasificados
 router.get('/inicio', (req, res) => {
-
-    res.render('inicio')
+    
+    conexion.query('SELECT * FROM clasificados', (error, results) => {
+        if(error){
+          throw error ; 
+        }
+        else{
+    
+          res.render('inicio',{results:results})
+        }
+    })
+    
 })
 // se llama el archivo controller a el app para ejecutar
 const crud = require('./controllers/crud');
@@ -35,5 +44,15 @@ router.post('/ingre', crud.ingre)
 
 
 const dotenv = require('dotenv')
+
+
+router.get('/prueba',(req , res)=>{
+
+   
+    
+})
+
+
+
 
 module.exports = router; // se exporta el modulo para poder utilizarlo donde lo requiera en este caso crudjs
