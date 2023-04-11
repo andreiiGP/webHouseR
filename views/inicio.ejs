@@ -204,42 +204,85 @@
       <h2 id="h2">CLASIFICADOS</h2>
       <h5 id="h5"><b>¿Vendes algo?</b> Aprovecha este espacio para publicar <br> tu  producto  o emprendimiento. </h5>
       <img id="dimencionesimagen" src="imagenes/vendido.png" alt="">
-       <div class="cuadrar-tabla table-wrapper-scroll-y my-custom-scrollbar">
-      <table class="table table-hover text-center table-bordered scroll ">
-        <thead>
-          <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Informacion</th>
-            <th scope="col">Contacto</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-         <tbody>
-          <% results.forEach((clasificados) => { %>
-            <tr>
-              <td><%= clasificados.Nombre %></td>
-              <td><%= clasificados.Informacion %></td>
-              <td><%= clasificados.Contacto %></td>
-              <td> 
-                <a href="/Delete" class="btn btn-outline-danger">Delete</a>
-                
-              </td>
-            </tr>
-          <% }); %>
-        </tbody> 
-      </table>
-    </div>
-    <a  href="/Delete" class="btn btn-outline-light interactive"><i class="fa-solid fa-plus fa-2x"></i> <br> ingresar clasificado</a>
     </div> 
     </div>
-  </section>
- <section class="bac">
-    <div>
-      <div class="col-lg-12">
-        <p class="copyright">Copyright © 2023 WEB HOUSE CoL.Ltd. All Rights Reserved.</p>
+    <div id="tabla-responsive">
+      <div class="cuadrar-tabla table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-hover text-center table-bordered scroll ">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Informacion</th>
+              <th scope="col">Contacto</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+           <tbody>
+            <% results.forEach((clasificados) => { %>
+              <tr>
+                <td><%= clasificados.Nombre %></td>
+                <td><%= clasificados.Informacion %></td>
+                <td><%= clasificados.Contacto %></td>
+                <td> 
+                  <a href="/Delete" class="btn btn-outline-danger">Delete</a>
+                  
+                </td>
+              </tr>
+            <% }); %>
+          </tbody> 
+        </table>
       </div>
+
+      <a class="btn btn-outline-light interactive" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fa-solid fa-plus "></i>  <br> ingresar clasificado</a>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Ingresa tu clasificado</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="formulario-clasi">
+          <form class=" row g-3" method="post" action="/registroclas">
+            <div class="col-12 ">
+              <label for="exampleFormControlInput1" class="form-label">NOMBRE:</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" >
+            </div>
+            <div class="col-12 ">
+              <label for="exampleFormControlInput1" class="form-label">INFORMACION:</label>
+              <textarea class="form-control" id="informacion" name="informacion" rows="3"></textarea>
+            </div>
+            <div class="col-12 ">
+              <label for="exampleFormControlInput1" class="form-label">CONTACTO:</label>
+              <input type="text" class="form-control" id="contacto" name="contacto">
+            </div>
+            <div class="col-12 ">
+              <label for="exampleFormControlInput1" class="form-label">ID:</label>
+              <input type="text" class="form-control" id="cedula" name="cedula"  placeholder="Confirma tu ID para registar el clasificado">
+            </div>
+            <div class="pt-1">
+              <button class="btn btn-primary" type="submit">Ingresar clasificado</button>
+           
+            </div>
+          </form>
+        </div>
+
+      </div>
+      </div>
+
     </div>
   </section>
+  <footer class="bac">
+    <div>
+      <div class="col-lg-12">
+        <p id="color-copy" class="copyright ">Copyright © 2023 WEB HOUSE CoL.Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+ <!-- <section class="bac">
+    <div>
+      <div class="col-lg-12">
+        <p id="color-copy" class="copyright ">Copyright © 2023 WEB HOUSE CoL.Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </section> -->
 
 
   <!-- Scripts -->
@@ -305,6 +348,22 @@
       checkSection();
     });
   </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <% if (typeof alert !="undefined" ) { %>
+    <script>
+      Swal.fire({
+        title: '<%=alertTitle%>',
+        text: '<%=alertMessage%>',
+        icon: '<%=alertIcon%>',
+        showConfirmButton:<%=showConfirmButton%>,
+        timer:<%=timer %>
+      }).then(() => {
+          window.location = '/<%= ruta %>'
+        })
+    </script>
+    <% } %>
 </body>
 
 </html>

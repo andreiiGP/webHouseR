@@ -25,15 +25,16 @@ router.get('/registro', async (req, res) => {
 // se llama a la ventana inicio de ususarios y se pone la tabal desde mysql para mostar los clasificados
 router.get('/inicio', (req, res) => {
     
-    conexion.query('SELECT * FROM clasificados', (error, results) => {
+    conexion.query('SELECT * FROM clasificados', (error, result) => {
         if(error){
           throw error ; 
         }
         else{
     
-          res.render('inicio',{results:results})
+          res.render('inicio',{results:result})
         }
     })
+ 
     
 })
 // se llama el archivo controller a el app para ejecutar
@@ -41,6 +42,7 @@ const crud = require('./controllers/crud');
 
 router.post('/registro', crud.registro) // se trae el metodo guardar("registro") para que se ejecute eel codigo de la ventana crud 
 router.post('/ingre', crud.ingre)
+router.post('/registroclas',crud.registroclas)
 
 
 const dotenv = require('dotenv')

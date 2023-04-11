@@ -39,6 +39,23 @@ exports.registro = async (req, res) => {
     }
   })
 }
+
+exports.registroclas = async (req, res) =>{
+
+  const Nombre=req.body.nombre;
+  const Informacion= req.body.informacion;
+  const Contacto= req.body.contacto;
+  const Cedula= req.body.cedula;
+  conexion.query('INSERT INTO clasificados SET ? ',{Nombre:Nombre,Informacion:Informacion,Contacto:Contacto,Cedula:Cedula},(error, result) => {
+    
+    if (error) {
+      console.log(error)
+
+    }
+      res.render('inicio')
+  })
+}
+
 // console.log(Cedula+"-"+Nombre+"-"+Apellido+"-"+Email+"-"+Telefono+"-"+Nombuser+"-"+Pass+"-"+Rol); 
 exports.ingre = async (req, res) => {
   const user = req.body.user;
