@@ -4,6 +4,7 @@ require('../database/db'); // requerimos la base de datos
 const bcryptjs = require('bcryptjs');
 const session = require('express-session');
 const { request, response } = require('express');
+const { render } = require('ejs');
 
 
 
@@ -52,7 +53,18 @@ exports.registroclas = async (req, res) =>{
       console.log(error)
 
     }
-      res.render('inicio')
+    else{
+
+      conexion.query('SELECT * FROM clasificados', (error, result) => {
+        if(error){
+          throw error ; 
+        }
+        else{
+    
+          res.render('inicio',{results:result})
+        }
+    })
+    }
   })
 }
 
@@ -65,7 +77,7 @@ exports.ingre = async (req, res) => {
     conexion.query('SELECT * FROM users WHERE user = ?', [user], async (error, results) => {
       if (results.length > 0) {
         // Si hay resultados, verificar la contraseña
-        const veri = await bcryptjs.compare(pass, results[0].password);
+        
         if (veri == true) {
           // Contraseña válida
           res.render('loguin', {
@@ -116,4 +128,4 @@ exports.ingre = async (req, res) => {
   }
 };
 
-/* codigo de la consulta de la tabal clasificados  */
+/* codigo de la consulta de la tabla clasificados  */
