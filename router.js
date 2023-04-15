@@ -43,6 +43,7 @@ const crud = require('./controllers/crud');
 router.post('/registro', crud.registro) // se trae el metodo guardar("registro") para que se ejecute eel codigo de la ventana crud 
 router.post('/ingre', crud.ingre)
 router.post('/registroclas',crud.registroclas)
+router.post('/eliminarclas',crud.eliminarclas)
 
 
 const dotenv = require('dotenv')

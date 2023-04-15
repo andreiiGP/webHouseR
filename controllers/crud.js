@@ -41,19 +41,45 @@ exports.registro = async (req, res) => {
   })
 }
 
-exports.registroclas =  (req, res) =>{
+exports.registroclas = (req, res) => {
 
-  const Nombre=req.body.nombre;
-  const Informacion= req.body.informacion;
-  const Contacto= req.body.contacto;
-  const Cedula= req.body.cedula;
-  conexion.query('INSERT INTO clasificados SET ? ',{Nombre:Nombre,Informacion:Informacion,Contacto:Contacto,Cedula:Cedula},(error, result) => {
-    
-    setTimeout(function() {
+  const Nombre = req.body.nombre;
+  const Informacion = req.body.informacion;
+  const Contacto = req.body.contacto;
+  const Cedula = req.body.cedula;
+  conexion.query('INSERT INTO clasificados SET ? ', { Nombre: Nombre, Informacion: Informacion, Contacto: Contacto, Cedula: Cedula }, (error, result) => {
+
+    setTimeout(function () {
       res.redirect('inicio');
     }, 2000);
-    
+
   })
+}
+
+exports.eliminarclas = (req, res) => {
+
+  const Cedula = req.body.cedula;
+  if (Cedula) {
+    conexion.query('SELECT * FROM users WHERE Cedula = ?', [Cedula], async (error, results) => {
+      if (results.length > 0) {
+        conexion.query('DELETE FROM clasificados WHERE ? ', { Cedula: Cedula }, (error, result) => {
+          if (error) {
+            console.log(error)
+
+          } else {
+            setTimeout(function () {
+              res.redirect('inicio');
+            }, 2000);
+          }
+
+        })
+      }
+      else {
+        console.log(error)
+      }
+    })
+
+  }
 }
 
 // console.log(Cedula+"-"+Nombre+"-"+Apellido+"-"+Email+"-"+Telefono+"-"+Nombuser+"-"+Pass+"-"+Rol); 
@@ -65,7 +91,7 @@ exports.ingre = async (req, res) => {
     conexion.query('SELECT * FROM users WHERE user = ?', [user], async (error, results) => {
       if (results.length > 0) {
         // Si hay resultados, verificar la contraseña
-        
+
         if (veri == true) {
           // Contraseña válida
           res.render('loguin', {
