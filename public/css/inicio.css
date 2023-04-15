@@ -397,7 +397,7 @@ h5{
 
 background-color:  white;
 margin-top: -5%;
-width: 780px;    
+width: 890px;    
 
 
 }
@@ -946,4 +946,11 @@ width: 780px;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 5px;
+}
+
+.titulocalsi{
+
+    color: black;
+    font-weight: 800;
+
 }

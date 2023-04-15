@@ -183,14 +183,15 @@
     <div class="card infoMA border-dark">
       <div class="card-body text-dark ">
         <h5 class="card-title" style="text-align: center;">CONOZCA EL MANUAL DE CONVIVENCIA. </h5>
-        <p class="card-text text-dark ">Descargue nuestro manual de convivencia para que este enterado de nuestras normas
+        <p class="card-text text-dark ">Descargue nuestro manual de convivencia para que este enterado de nuestras
+          normas
           y derechos en la copropiedad </p>
         <br>
         <a href="pdf/DOC PDF EJEMPLO.pdf" class="btn btn-primary " download="Manual de convivencia.pdf">Download <i
             class="fa-sharp fa-regular fa-file"></i></a>
       </div>
     </div>
- </section>
+  </section>
   <div class="svg2">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path fill="#13547a" fill-opacity="1"
@@ -200,11 +201,11 @@
   </div>
   <section>
     <div class="clasificados">
-    <div class="cuadrar-clasi">
-      <h2 id="h2">CLASIFICADOS</h2>
-      <h5 id="h5"><b>¿Vendes algo?</b> Aprovecha este espacio para publicar <br> tu  producto  o emprendimiento. </h5>
-      <img id="dimencionesimagen" src="imagenes/vendido.png" alt="">
-    </div> 
+      <div class="cuadrar-clasi">
+        <h2 id="h2">CLASIFICADOS</h2>
+        <h5 id="h5"><b>¿Vendes algo?</b> Aprovecha este espacio para publicar <br> tu producto o emprendimiento. </h5>
+        <img id="dimencionesimagen" src="imagenes/vendido.png" alt="">
+      </div>
     </div>
     <div id="tabla-responsive">
       <div class="cuadrar-tabla table-wrapper-scroll-y my-custom-scrollbar">
@@ -217,55 +218,96 @@
               <th scope="col">Acciones</th>
             </tr>
           </thead>
-           <tbody>
-            <% results.forEach((clasificados) => { %>
+          <tbody>
+            <% results.forEach((clasificados)=> { %>
               <tr>
-                <td><%= clasificados.Nombre %></td>
-                <td><%= clasificados.Informacion %></td>
-                <td><%= clasificados.Contacto %></td>
-                <td> 
-                  <a href="/Delete" class="btn btn-outline-danger">Delete</a>
-                  
+                <td>
+                  <%= clasificados.Nombre %>
+                </td>
+                <td>
+                  <%= clasificados.Informacion %>
+                </td>
+                <td>
+                  <%= clasificados.Contacto %>
+                </td>
+                <td>
+                  <a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-toggle="modal"
+                    data-bs-target="#exampleModaldelete"></i>Delete</a>
+                  <div class="modal fade" id="exampleModaldelete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title titulocalsi" id="exampleModalLabel ">Elimina tu clasificado</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="formulario-clasi">
+                            <form class=" row g-3" method="post" action="/registroclas">
+
+                              <div class="col-12 ">
+                                <label for="exampleFormControlInput1" class="form-label separador2"></label>
+                                <input type="text" class="form-control" id="cedula" name="cedula"
+                                  placeholder="Confirma tu ID para eliminar el clasificado">
+                              </div>
+                              <div class="pt-1">
+                                <button class="btn btn-primary" type="submit">Elimina tu clasificado</button>
+
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </td>
               </tr>
-            <% }); %>
-          </tbody> 
+              <% }); %>
+          </tbody>
         </table>
       </div>
 
-      <a class="btn btn-outline-light interactive" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fa-solid fa-plus "></i>  <br> ingresar clasificado</a>
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Ingresa tu clasificado</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="formulario-clasi">
-          <form class=" row g-3" method="post" action="/registroclas">
-            <div class="col-12 ">
-              <label for="exampleFormControlInput1" class="form-label">NOMBRE:</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" >
+      <a class="btn btn-outline-light interactive" data-bs-toggle="modal" data-bs-toggle="modal"
+        data-bs-target="#exampleModal"><i class="fa-solid fa-plus "></i> <br> ingresar clasificado</a>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title titulocalsi" id="exampleModalLabel ">Ingresa tu clasificado</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="col-12 ">
-              <label for="exampleFormControlInput1" class="form-label">INFORMACION:</label>
-              <textarea class="form-control" id="informacion" name="informacion" rows="3"></textarea>
-            </div>
-            <div class="col-12 ">
-              <label for="exampleFormControlInput1" class="form-label">CONTACTO:</label>
-              <input type="text" class="form-control" id="contacto" name="contacto">
-            </div>
-            <div class="col-12 ">
-              <label for="exampleFormControlInput1" class="form-label">ID:</label>
-              <input type="text" class="form-control" id="cedula" name="cedula"  placeholder="Confirma tu ID para registar el clasificado">
-            </div>
-            <div class="pt-1">
-              <button class="btn btn-primary" type="submit">Ingresar clasificado</button>
-           
-            </div>
-          </form>
-        </div>
+            <div class="modal-body">
+              <div class="formulario-clasi">
+                <form class=" row g-3" method="post" action="/registroclas">
+                  <div class="col-12 ">
+                    <label for="exampleFormControlInput1" class="form-label separador">NOMBRE:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required="">
+                  </div>
+                  <div class="col-12 ">
+                    <label for="exampleFormControlInput1" class="form-label separador">INFORMACION:</label>
+                    <textarea class="form-control" id="informacion" name="informacion" rows="6" required=""></textarea>
+                  </div>
+                  <div class="col-12 ">
+                    <label for="exampleFormControlInput1" class="form-label separador">CONTACTO:</label>
+                    <input type="text" class="form-control" id="contacto" name="contacto" required="">
+                  </div>
+                  <div class="col-12 ">
+                    <label for="exampleFormControlInput1" class="form-label separador">ID:</label>
+                    <input type="text" class="form-control" id="cedula" name="cedula"
+                      placeholder="Confirma tu ID para registar el clasificado" required="">
+                  </div>
+                  <div class="pt-1">
+                    <button class="btn btn-primary" type="submit" onclick="validar()">Ingresar clasificado</button>
 
+
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
+    </div>
 
     </div>
   </section>
@@ -276,13 +318,7 @@
       </div>
     </div>
   </footer>
- <!-- <section class="bac">
-    <div>
-      <div class="col-lg-12">
-        <p id="color-copy" class="copyright ">Copyright © 2023 WEB HOUSE CoL.Ltd. All Rights Reserved.</p>
-      </div>
-    </div>
-  </section> -->
+
 
 
   <!-- Scripts -->
@@ -349,21 +385,44 @@
     });
   </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <% if (typeof alert !="undefined" ) { %>
-    <script>
-      Swal.fire({
-        title: '<%=alertTitle%>',
-        text: '<%=alertMessage%>',
-        icon: '<%=alertIcon%>',
-        showConfirmButton:<%=showConfirmButton%>,
-        timer:<%=timer %>
-      }).then(() => {
-          window.location = '/<%= ruta %>'
+  const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+    function validar() {
+    var nombre = document.getElementById('nombre')
+    var informacion = document.getElementById('informacion')
+    var contacto = document.getElementById('contacto')
+    var cedula = document.getElementById('cedula')
+    
+    if(nombre.value != "" | informacion.value != "" |contacto.value != "" |cedula.value != ""  ){
+        Toast.fire({
+          icon: 'success',
+          title: 'Registro creado'
         })
-    </script>
-    <% } %>
+      }
+    else if (nombre.value === "" | informacion.value === "" |contacto.value === "" |cedula.value === ""  ) {
+        Toast.fire({
+          icon: 'error',
+          title: 'faltan campos'
+        })
+        return false;
+      }
+      return true;
+    }
+  
+  </script>
 </body>
 
 </html>

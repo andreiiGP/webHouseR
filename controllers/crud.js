@@ -41,7 +41,7 @@ exports.registro = async (req, res) => {
   })
 }
 
-exports.registroclas = async (req, res) =>{
+exports.registroclas =  (req, res) =>{
 
   const Nombre=req.body.nombre;
   const Informacion= req.body.informacion;
@@ -49,22 +49,10 @@ exports.registroclas = async (req, res) =>{
   const Cedula= req.body.cedula;
   conexion.query('INSERT INTO clasificados SET ? ',{Nombre:Nombre,Informacion:Informacion,Contacto:Contacto,Cedula:Cedula},(error, result) => {
     
-    if (error) {
-      console.log(error)
-
-    }
-    else{
-
-      conexion.query('SELECT * FROM clasificados', (error, result) => {
-        if(error){
-          throw error ; 
-        }
-        else{
+    setTimeout(function() {
+      res.redirect('inicio');
+    }, 2000);
     
-          res.render('inicio',{results:result})
-        }
-    })
-    }
   })
 }
 
