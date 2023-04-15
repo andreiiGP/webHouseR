@@ -19,8 +19,8 @@ exports.registro = async (req, res) => {
   const User = req.body.nombuser;
   const Pass = req.body.pass;
   const Rol = req.body.rol;
-  let passswordHas = await bcryptjs.hash(Pass, 8)
-  conexion.query('INSERT INTO users SET ? ', { Cedula: Cedula, Nombre: Nombre, Apellido: Apellido, Correo: Correo, Telefono: Telefono, User: User, password: passswordHas, Rol: Rol }, (error, result) => {
+  /*  let passswordHas = await bcryptjs.hash(Pass, 8) */
+  conexion.query('INSERT INTO users SET ? ', { Cedula: Cedula, Nombre: Nombre, Apellido: Apellido, Correo: Correo, Telefono: Telefono, User: User, password: Pass, Rol: Rol }, (error, result) => {
 
     if (error) {
       console.log(error)
@@ -60,7 +60,7 @@ exports.eliminarclas = (req, res) => {
 
   const Cedula = req.body.cedula;
   if (Cedula) {
-    conexion.query('SELECT * FROM users WHERE Cedula = ?', [Cedula], async (error, results) => {
+    conexion.query('SELECT * FROM clasificados WHERE Cedula = ?', [Cedula], async (error, results) => {
       if (results.length > 0) {
         conexion.query('DELETE FROM clasificados WHERE ? ', { Cedula: Cedula }, (error, result) => {
           if (error) {
@@ -73,9 +73,16 @@ exports.eliminarclas = (req, res) => {
           }
 
         })
-      }
-      else {
-        console.log(error)
+      } else {
+        res.render('in', {
+          alert: true,
+          alertTitle: 'ERROR',
+          alertMessage: 'Su id no es correcto  ',
+          alertIcon: 'error',
+          showConfirmButton: false,
+          timer: 2000,
+          ruta: ('inicio')
+        })
       }
     })
 
@@ -91,7 +98,8 @@ exports.ingre = async (req, res) => {
     conexion.query('SELECT * FROM users WHERE user = ?', [user], async (error, results) => {
       if (results.length > 0) {
         // Si hay resultados, verificar la contraseña
-
+        const veri = (pass === results[0].password);
+        /* const veri = await bcrypt.compare(pass,results[0].password); */
         if (veri == true) {
           // Contraseña válida
           res.render('loguin', {

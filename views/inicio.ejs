@@ -248,10 +248,11 @@
                               <div class="col-12 ">
                                 <label for="exampleFormControlInput1" class="form-label separador2"></label>
                                 <input type="text" class="form-control" id="cedula" name="cedula"
-                                  placeholder="Confirma tu ID para eliminar el clasificado">
+                                  placeholder="Confirma tu ID para eliminar el clasificado" required="">
                               </div>
                               <div class="pt-1">
-                                <button class="btn btn-primary" type="submit">Elimina tu clasificado</button>
+                                <button class="btn btn-primary" type="submit" onclick="valelimi()">Elimina tu
+                                  clasificado</button>
 
                               </div>
                             </form>
@@ -386,33 +387,34 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script>
 
-  const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-      })
-      
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+
     function validar() {
-    var nombre = document.getElementById('nombre')
-    var informacion = document.getElementById('informacion')
-    var contacto = document.getElementById('contacto')
-    var cedula = document.getElementById('cedula')
-    
-    if(nombre.value != "" | informacion.value != "" |contacto.value != "" |cedula.value != ""  ){
+      var nombre = document.getElementById('nombre')
+      var informacion = document.getElementById('informacion')
+      var contacto = document.getElementById('contacto')
+      var cedula = document.getElementById('cedula')
+
+      if (nombre.value != "" | informacion.value != "" | contacto.value != "" | cedula.value != "") {
         Toast.fire({
           icon: 'success',
           title: 'Registro creado'
         })
       }
-    else if (nombre.value === "" | informacion.value === "" |contacto.value === "" |cedula.value === ""  ) {
+      else if (nombre.value === "" | informacion.value === "" | contacto.value === "" | cedula.value === "") {
         Toast.fire({
           icon: 'error',
           title: 'faltan campos'
@@ -421,8 +423,32 @@
       }
       return true;
     }
-  
+
   </script>
+  <script>
+
+    function valelimi() {
+      var cedula = document.getElementById('cedula')
+      if (cedula.value != "") {
+        Toast.fire({
+          icon: 'success',
+          title: 'Clasificado elminado '
+        })
+      } else if (cedula.value === "") {
+        Toast.fire({
+          icon: 'error',
+          title: 'faltan campos  '
+        })
+        return false;
+      }
+      return true;
+    }
+
+  </script>
+
+
+
+
 </body>
 
 </html>
