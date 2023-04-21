@@ -1,6 +1,4 @@
-// los router son los que nos van apermitir llamar nustras vetanas de ususrio o nustro fronend
-
-
+// los router son los que nos van apermitir llamar nustras vetanas de ususrio o nuestro fronend
 const { error } = require('console');
 const express = require('express');
 const router = express.Router();
@@ -37,11 +35,18 @@ router.get('/inicio', (req, res) => {
 
 
 })
-
+// se llama plantilla in para cuando sea erronea la eliminacion del clasificado se cargue y de la apariencia 
 router.get('/in', (req, res) => {
 
     res.render('in.ejs')
 })
+// se llama ventana servicios
+router.get('/Servicios', (req, res) => {
+
+    res.render('Servicios');
+
+})
+
 
 // se llama el archivo controller a el app para ejecutar
 const crud = require('./controllers/crud');
@@ -53,15 +58,5 @@ router.post('/eliminarclas', crud.eliminarclas)
 
 
 const dotenv = require('dotenv')
-
-
-router.get('/prueba', (req, res) => {
-
-
-
-})
-
-
-
 
 module.exports = router; // se exporta el modulo para poder utilizarlo donde lo requiera en este caso crudjs
