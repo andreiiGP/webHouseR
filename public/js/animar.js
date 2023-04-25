@@ -24,3 +24,6 @@ const animar=()=>{
 }
 animar()
 })  
+
+const año = document.getElementById('año')
+año.innerHTML= new Date().getFullYear();

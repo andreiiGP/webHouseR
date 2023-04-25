@@ -2939,7 +2939,16 @@ textarea.form-control-lg {
   pointer-events: none;
   opacity: 0.65;
 }
+.cuadrarr{
 
+  width: 95%;
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-top: 8%;
+ 
+  
+ 
+}
 .btn-primary {
   
   color: rgb(255, 255, 255);

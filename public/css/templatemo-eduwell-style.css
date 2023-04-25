@@ -1199,9 +1199,9 @@ section.contact-us .contact-info {
   padding-left: 90px;
 }
 
-section.contact-us #contact button:hover {
+/* section.contact-us #contact button:hover {
   opacity: 0.9;
-}
+} */
 
 section.contact-us ul.social-icons li {
   display: inline-block;
@@ -1367,11 +1367,11 @@ section.contact-us h4{
   position: relative;
 }
 
-button:hover
+/* button:hover
 {   
   background: rgb(206, 206, 206);
   opacity: 0.9;
-}
+} */
 
 section.contact-us #contact button {
   float: end;
